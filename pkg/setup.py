@@ -8,7 +8,7 @@ Simple utilities for teaching Pandas, Jupyter, seaborn, and sklearn.
 
 setuptools.setup(
     name="wvu",
-    version="0.3.7",
+    version="0.3.8",
     author="John Mount",
     author_email="jmount@win-vector.com",
     url="https://github.com/WinVector/wvu",
@@ -36,6 +36,8 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "License :: OSI Approved :: BSD License",
     ],
     long_description=LONG_DESCRIPTION,

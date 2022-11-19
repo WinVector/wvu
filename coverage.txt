@@ -13,7 +13,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_cross_plan1.py:1: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 _________________ ERROR collecting tests/test_cross_predict.py _________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_cross_predict.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -22,7 +22,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_cross_predict.py:4: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 _________________ ERROR collecting tests/test_deviance_calc.py _________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_deviance_calc.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -31,7 +31,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_deviance_calc.py:2: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ________________ ERROR collecting tests/test_eval_fn_pre_row.py ________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_eval_fn_pre_row.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -40,7 +40,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_eval_fn_pre_row.py:2: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ___________________ ERROR collecting tests/test_match_auc.py ___________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_match_auc.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -49,7 +49,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_match_auc.py:1: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ____________________ ERROR collecting tests/test_onehot.py _____________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_onehot.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -58,7 +58,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_onehot.py:3: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ________________ ERROR collecting tests/test_perm_score_vars.py ________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_perm_score_vars.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -67,7 +67,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_perm_score_vars.py:4: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 _____________________ ERROR collecting tests/test_plots.py _____________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_plots.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -76,7 +76,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_plots.py:5: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ______________________ ERROR collecting tests/test_se.py _______________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_se.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -85,7 +85,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_se.py:5: in <module>
     from wvpy.util import suppress_stdout_stderr
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 __________________ ERROR collecting tests/test_search_grid.py __________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_search_grid.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -94,7 +94,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_search_grid.py:3: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ____________________ ERROR collecting tests/test_stats1.py _____________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_stats1.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -103,7 +103,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_stats1.py:2: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ________________ ERROR collecting tests/test_threshold_stats.py ________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_threshold_stats.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -112,7 +112,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_threshold_stats.py:3: in <module>
     import wvpy.util
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 ________________ ERROR collecting tests/test_types_in_frame.py _________________
 ImportError while importing test module '/Users/johnmount/Documents/work/wvu/pkg/tests/test_types_in_frame.py'.
 Hint: make sure your test modules/packages have valid Python names.
@@ -121,7 +121,7 @@ Traceback:
     return _bootstrap._gcd_import(name[level:], package, level)
 tests/test_types_in_frame.py:3: in <module>
     from wvpy.util import types_in_frame
-E   ModuleNotFoundError: No module named 'wvpy'
+E   ModuleNotFoundError: No module named 'wvpy.util'
 
 ---------- coverage: platform darwin, python 3.9.12-final-0 ----------
 Name              Stmts   Miss  Cover
@@ -146,4 +146,4 @@ ERROR tests/test_stats1.py
 ERROR tests/test_threshold_stats.py
 ERROR tests/test_types_in_frame.py
 !!!!!!!!!!!!!!!!!!! Interrupted: 13 errors during collection !!!!!!!!!!!!!!!!!!!
-============================== 13 errors in 7.05s ==============================
+============================= 13 errors in 13.43s ==============================
