@@ -1,11 +1,11 @@
 import pandas
 import data_algebra.test_util
-import wvpy.util
+import wvu.util
 
 
 def test_threshold_stats_():
     d = pandas.DataFrame({"x": [1, 2, 3, 4, 5], "y": [False, False, True, True, False]})
-    stats = wvpy.util.threshold_statistics(d, model_predictions="x", yvalues="y",)
+    stats = wvu.util.threshold_statistics(d, model_predictions="x", yvalues="y",)
     expect = pandas.DataFrame(
         {
             "threshold": [0.999999, 1.0, 2.0, 3.0, 4.0, 5.0, 5.000001],

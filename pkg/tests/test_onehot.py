@@ -1,6 +1,6 @@
 import data_algebra.test_util
 import pandas as pd
-import wvpy.util
+import wvu.util
 import vtreat
 
 
@@ -13,8 +13,8 @@ def test_onehot():
         }
     )
 
-    enc_bundle = wvpy.util.fit_onehot_enc(d, categorical_var_names=["xc", "xd"])
-    res = wvpy.util.apply_onehot_enc(d, encoder_bundle=enc_bundle)
+    enc_bundle = wvu.util.fit_onehot_enc(d, categorical_var_names=["xc", "xd"])
+    res = wvu.util.apply_onehot_enc(d, encoder_bundle=enc_bundle)
 
     expect = pd.DataFrame(
         {

@@ -1,5 +1,5 @@
 import pandas
-import wvpy.util
+import wvu.util
 
 
 def test_eval_fn_per_row():
@@ -8,6 +8,6 @@ def test_eval_fn_per_row():
     def f(mp, x):
         return mp["a"] + mp["b"] + x
 
-    res = wvpy.util.eval_fn_per_row(f, 7, d)
+    res = wvu.util.eval_fn_per_row(f, 7, d)
     expect = [11, 13]
     assert res == expect

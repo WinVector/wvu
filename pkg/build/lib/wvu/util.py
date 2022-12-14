@@ -139,9 +139,9 @@ def mk_cross_plan(n: int, k: int) -> List:
 
     Example:
 
-    import wvpy.util
+    import wvu.util
 
-    wvpy.util.mk_cross_plan(10, 3)
+    wvu.util.mk_cross_plan(10, 3)
     """
     grp = [i % k for i in range(n)]
     numpy.random.shuffle(grp)
@@ -210,20 +210,20 @@ def plot_roc(
     Example:
 
     import pandas
-    import wvpy.util
+    import wvu.util
 
     d = pandas.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.plot_roc(
+    wvu.util.plot_roc(
         prediction=d['x'],
         istrue=d['y'],
         ideal_line_color='lightgrey'
     )
 
-    wvpy.util.plot_roc(
+    wvu.util.plot_roc(
         prediction=d['x'],
         istrue=d['y'],
         ideal_line_color='lightgrey',
@@ -309,14 +309,14 @@ def dual_density_plot(
     Example:
 
     import pandas
-    import wvpy.util
+    import wvu.util
 
     d = pandas.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.dual_density_plot(
+    wvu.util.dual_density_plot(
         probs=d['x'],
         istrue=d['y'],
     )
@@ -354,14 +354,14 @@ def dual_hist_plot(probs, istrue, title="Dual Histogram Plot", *, truth_target=T
     Example:
 
     import pandas
-    import wvpy.util
+    import wvu.util
 
     d = pandas.DataFrame({
         'x': [.1, .2, .3, .4, .5],
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.dual_hist_plot(
+    wvu.util.dual_hist_plot(
         probs=d['x'],
         istrue=d['y'],
     )
@@ -413,7 +413,7 @@ def dual_density_plot_proba1(
     d['x0'] = 1 - d['x']
     pmat = numpy.asarray(d.loc[:, ['x0', 'x']])
 
-    wvpy.util.dual_density_plot_proba1(
+    wvu.util.dual_density_plot_proba1(
         probs=pmat,
         istrue=d['y'],
     )
@@ -455,7 +455,7 @@ def dual_hist_plot_proba1(probs, istrue, *, show=True):
     d['x0'] = 1 - d['x']
     pmat = numpy.asarray(d.loc[:, ['x0', 'x']])
 
-    wvpy.util.dual_hist_plot_proba1(
+    wvu.util.dual_hist_plot_proba1(
         probs=pmat,
         istrue=d['y'],
     )
@@ -490,7 +490,7 @@ def gain_curve_plot(prediction, outcome, title="Gain curve plot", *, show=True):
         'y': [0, 0, 1, 1, 0]
     })
 
-    wvpy.util.gain_curve_plot(
+    wvu.util.gain_curve_plot(
         prediction=d['x'],
         outcome=d['y'],
     )
@@ -563,7 +563,7 @@ def lift_curve_plot(prediction, outcome, title="Lift curve plot", *, show=True):
         'y': [0, 0, 1, 1, 0]
     })
 
-    wvpy.util.lift_curve_plot(
+    wvu.util.lift_curve_plot(
         prediction=d['x'],
         outcome=d['y'],
     )
@@ -697,14 +697,14 @@ def threshold_statistics(
     Example:
 
     import pandas
-    import wvpy.util
+    import wvu.util
 
     d = pandas.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.threshold_statistics(
+    wvu.util.threshold_statistics(
         d,
         model_predictions='x',
         yvalues='y',
@@ -823,14 +823,14 @@ def threshold_plot(
     Example:
 
     import pandas
-    import wvpy.util
+    import wvu.util
 
     d = pandas.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.threshold_plot(
+    wvu.util.threshold_plot(
         d,
         pred_var='x',
         truth_var='y',

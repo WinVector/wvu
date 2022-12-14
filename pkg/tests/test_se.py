@@ -1,8 +1,6 @@
 
-import os
-import pytest
 
-from wvpy.util import suppress_stdout_stderr
+from wvu.util import suppress_stdout_stderr
 
 
 def test_suppress_stdout_stderr():

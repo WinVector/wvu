@@ -1,5 +1,5 @@
 import pandas
-import wvpy.util
+import wvu.util
 import data_algebra.test_util
 import data_algebra.util
 
@@ -7,7 +7,7 @@ import data_algebra.util
 def test_stats1():
     d = pandas.DataFrame({"x": [1, 2, 3, 4, 5], "y": [False, False, True, True, False]})
 
-    stats = wvpy.util.threshold_statistics(d, model_predictions="x", yvalues="y",)
+    stats = wvu.util.threshold_statistics(d, model_predictions="x", yvalues="y",)
     # print(data_algebra.util.pandas_to_example_str(stats))
 
     expect = pandas.DataFrame(

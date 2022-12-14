@@ -1,10 +1,10 @@
-import wvpy.util
+import wvu.util
 
 
 def test_cross_plan1():
     n = 10
     k = 3
-    plan = wvpy.util.mk_cross_plan(n, k)
+    plan = wvu.util.mk_cross_plan(n, k)
 
     assert len(plan) == k
     universe = set(range(n))

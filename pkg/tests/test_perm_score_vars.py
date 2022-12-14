@@ -1,8 +1,7 @@
 import pandas
 import numpy.random
 import sklearn.linear_model
-import wvpy.util
-import data_algebra.test_util
+import wvu.util
 
 
 def test_perm_score_vars():
@@ -19,7 +18,7 @@ def test_perm_score_vars():
     vars = [c for c in d.columns if c != "y"]
     model = sklearn.linear_model.LogisticRegression()
     model.fit(d.loc[:, vars], d["y"])
-    scores = wvpy.util.perm_score_vars(
+    scores = wvu.util.perm_score_vars(
         d=d, model=model, istrue=d["y"], modelvars=vars, k=100,
     )
     scores["signal_variable"] = [v.startswith("x_") for v in scores["var"]]

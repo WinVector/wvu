@@ -2,11 +2,11 @@
 import numpy
 import pandas
 import matplotlib.pyplot
-import wvpy.util
+import wvu.util
 
 
 # from:
-# https://github.com/WinVector/wvpy/blob/main/examples/example_graphs.ipynb
+# https://github.com/WinVector/wvu/blob/main/examples/example_graphs.ipynb
 def test_graphs(monkeypatch):
     # https://stackoverflow.com/a/60127271/6901725
     monkeypatch.setattr(matplotlib.pyplot, 'show', lambda: None)
@@ -17,7 +17,7 @@ def test_graphs(monkeypatch):
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.plot_roc(
+    wvu.util.plot_roc(
         prediction=d['x'],
         istrue=d['y'],
         extra_points=pandas.DataFrame({
@@ -34,7 +34,7 @@ def test_graphs(monkeypatch):
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.dual_density_plot(
+    wvu.util.dual_density_plot(
         probs=d['x'],
         istrue=d['y'],
     )
@@ -46,7 +46,7 @@ def test_graphs(monkeypatch):
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.dual_hist_plot(
+    wvu.util.dual_hist_plot(
         probs=d['x'],
         istrue=d['y'],
     )
@@ -58,7 +58,7 @@ def test_graphs(monkeypatch):
         'y': [0, 0, 1, 1, 0]
     })
 
-    wvpy.util.gain_curve_plot(
+    wvu.util.gain_curve_plot(
         prediction=d['x'],
         outcome=d['y'],
     )
@@ -70,7 +70,7 @@ def test_graphs(monkeypatch):
         'y': [0, 0, 1, 1, 0]
     })
 
-    wvpy.util.lift_curve_plot(
+    wvu.util.lift_curve_plot(
         prediction=d['x'],
         outcome=d['y'],
     )
@@ -82,7 +82,7 @@ def test_graphs(monkeypatch):
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.threshold_plot(
+    wvu.util.threshold_plot(
         d,
         pred_var='x',
         truth_var='y',
@@ -96,7 +96,7 @@ def test_graphs(monkeypatch):
         'y': [False, False, True, True, False]
     })
 
-    wvpy.util.threshold_plot(
+    wvu.util.threshold_plot(
         d,
         pred_var='x',
         truth_var='y',
@@ -112,7 +112,7 @@ def test_graphs(monkeypatch):
     d['x0'] = 1 - d['x']
     pmat = numpy.asarray(d.loc[:, ['x0', 'x']])
 
-    wvpy.util.dual_density_plot_proba1(
+    wvu.util.dual_density_plot_proba1(
         probs=pmat,
         istrue=d['y'],
     )
@@ -126,7 +126,7 @@ def test_graphs(monkeypatch):
     d['x0'] = 1 - d['x']
     pmat = numpy.asarray(d.loc[:, ['x0', 'x']])
 
-    wvpy.util.dual_hist_plot_proba1(
+    wvu.util.dual_hist_plot_proba1(
         probs=pmat,
         istrue=d['y'],
     )

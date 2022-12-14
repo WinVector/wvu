@@ -1,6 +1,6 @@
 
 import pandas as pd
-from wvpy.util import types_in_frame
+from wvu.util import types_in_frame
 
 
 def test_types_in_frame():
