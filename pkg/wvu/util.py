@@ -788,7 +788,7 @@ def threshold_statistics(
     if sorted_frame.shape[0] > 1:
         want_row = [True] + list(
             numpy.array(sorted_frame["threshold"][range(sorted_frame.shape[0]-1)]) 
-                != numpy.array(sorted_frame["threshold"][range(1, sorted_frame.shape[0])])
+                < numpy.array(sorted_frame["threshold"][range(1, sorted_frame.shape[0])])
         )
         sorted_frame = sorted_frame.loc[want_row, :].reset_index(drop=True, inplace=False)
     return sorted_frame
