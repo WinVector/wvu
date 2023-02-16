@@ -18,47 +18,13 @@ tests/test_stats1.py .                                                   [ 87%]
 tests/test_threshold_stats.py .                                          [ 93%]
 tests/test_types_in_frame.py .                                           [100%]
 
-=============================== warnings summary ===============================
-tests/test_plots.py::test_graphs
-  /Users/johnmount/Documents/work/wvu/pkg/wvu/util.py:333: FutureWarning: 
-  
-  `shade` is now deprecated in favor of `fill`; setting `fill=True`.
-  This will become an error in seaborn v0.14.0; please update your code.
-  
-    seaborn.kdeplot(preds_on_positive, label=positive_label, shade=True)
-
-tests/test_plots.py::test_graphs
-  /Users/johnmount/Documents/work/wvu/pkg/wvu/util.py:334: FutureWarning: 
-  
-  `shade` is now deprecated in favor of `fill`; setting `fill=True`.
-  This will become an error in seaborn v0.14.0; please update your code.
-  
-    seaborn.kdeplot(preds_on_negative, label=negative_label, shade=True)
-
-tests/test_plots.py::test_graphs
-  /Users/johnmount/Documents/work/wvu/pkg/wvu/util.py:430: FutureWarning: 
-  
-  `shade` is now deprecated in favor of `fill`; setting `fill=True`.
-  This will become an error in seaborn v0.14.0; please update your code.
-  
-    seaborn.kdeplot(preds_on_positive, label=positive_label, shade=True)
-
-tests/test_plots.py::test_graphs
-  /Users/johnmount/Documents/work/wvu/pkg/wvu/util.py:431: FutureWarning: 
-  
-  `shade` is now deprecated in favor of `fill`; setting `fill=True`.
-  This will become an error in seaborn v0.14.0; please update your code.
-  
-    seaborn.kdeplot(preds_on_negative, label=negative_label, shade=True)
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-
 ---------- coverage: platform darwin, python 3.9.15-final-0 ----------
 Name              Stmts   Miss  Cover
 -------------------------------------
-wvu/__init__.py       3      0   100%
-wvu/util.py         321      7    98%
+wvu/__init__.py       4      0   100%
+wvu/util.py         324      7    98%
 -------------------------------------
-TOTAL               324      7    98%
+TOTAL               328      7    98%
 
-======================== 16 passed, 4 warnings in 9.37s ========================
+
+============================= 16 passed in 10.38s ==============================

@@ -330,8 +330,8 @@ def dual_density_plot(
     preds_on_negative = [
         probs[i] for i in range(len(probs)) if not istrue[i] == truth_target
     ]
-    seaborn.kdeplot(preds_on_positive, label=positive_label, shade=True)
-    seaborn.kdeplot(preds_on_negative, label=negative_label, shade=True)
+    seaborn.kdeplot(preds_on_positive, label=positive_label, fill=True)
+    seaborn.kdeplot(preds_on_negative, label=negative_label, fill=True)
     matplotlib.pyplot.ylabel(ylabel)
     matplotlib.pyplot.xlabel(xlabel)
     matplotlib.pyplot.title(title)
@@ -427,8 +427,8 @@ def dual_density_plot_proba1(
     preds_on_negative = [
         probs[i, 1] for i in range(len(probs)) if not istrue[i] == truth_target
     ]
-    seaborn.kdeplot(preds_on_positive, label=positive_label, shade=True)
-    seaborn.kdeplot(preds_on_negative, label=negative_label, shade=True)
+    seaborn.kdeplot(preds_on_positive, label=positive_label, fill=True)
+    seaborn.kdeplot(preds_on_negative, label=negative_label, fill=True)
     matplotlib.pyplot.ylabel(ylabel)
     matplotlib.pyplot.xlabel(xlabel)
     matplotlib.pyplot.title(title)
@@ -722,7 +722,6 @@ def threshold_statistics(
     sorted_frame["notY"] = 1 - sorted_frame["truth"]  # falses
     sorted_frame["one"] = 1
     del sorted_frame["orig_index"]
-
     # pseudo-observation to get end-case (accept nothing case)
     eps = 1.0e-6
     sorted_frame = pandas.concat(
@@ -747,7 +746,6 @@ def threshold_statistics(
         ]
     )
     sorted_frame.reset_index(inplace=True, drop=True)
-
     # basic cumulative facts
     sorted_frame["count"] = sorted_frame["one"].cumsum()  # predicted true so far
     sorted_frame["fraction"] = sorted_frame["count"] / max(1, sorted_frame["one"].sum())
@@ -771,25 +769,28 @@ def threshold_statistics(
         + sorted_frame["notY"].sum()
         - sorted_frame["notY"].cumsum()  # true negative count
     ) / sorted_frame["one"].sum()
-
     # approximate cdf work
     sorted_frame["cdf"] = 1 - sorted_frame["fraction"]
-
     # derived facts and synonyms
     sorted_frame["recall"] = sorted_frame["true_positive_rate"]
     sorted_frame["sensitivity"] = sorted_frame["recall"]
     sorted_frame["specificity"] = 1 - sorted_frame["false_positive_rate"]
-
     # re-order for neatness
     sorted_frame["new_index"] = sorted_frame.index.copy()
     sorted_frame.sort_values(["new_index"], ascending=[False], inplace=True)
     sorted_frame.reset_index(inplace=True, drop=True)
-
     # clean up
     del sorted_frame["notY"]
     del sorted_frame["one"]
     del sorted_frame["new_index"]
     del sorted_frame["truth"]
+    # limit down to last version of each threshold
+    if sorted_frame.shape[0] > 1:
+        want_row = [True] + list(
+            numpy.array(sorted_frame["threshold"][range(sorted_frame.shape[0]-1)]) 
+                != numpy.array(sorted_frame["threshold"][range(1, sorted_frame.shape[0])])
+        )
+        sorted_frame = sorted_frame.loc[want_row, :].reset_index(drop=True, inplace=False)
     return sorted_frame
 
 
@@ -874,7 +875,9 @@ def threshold_plot(
                 pandas.DataFrame({"measure": plotvars, "value": plotvars}),
                 control_table_keys=["measure"],
                 record_keys=["threshold"],
-            )
+                strict=False,
+            ),
+            strict=False,
         )
         prtlong = reshaper.transform(to_plot)
         grid = seaborn.FacetGrid(
