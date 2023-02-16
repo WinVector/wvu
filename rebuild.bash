@@ -5,7 +5,8 @@ pip uninstall -y wvu
 pytest --cov wvu > ../coverage.txt
 cat ../coverage.txt
 python3 setup.py sdist bdist_wheel
-pip install dist/wvu-*.tar.gz
+# pip install dist/wvu-*.tar.gz
+pip install --no-deps wvu
 pdoc -o docs ./wvu
 popd
 twine check pkg/dist/*

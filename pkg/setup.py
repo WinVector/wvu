@@ -20,8 +20,8 @@ setuptools.setup(
         "seaborn",
         "matplotlib",
         "vtreat>=1.2.4",
-        "wvpy>=0.3.5",
-        "data_algebra>=1.4.1"
+        "wvpy>=0.3.9",
+        "data_algebra>=1.6.5"
     ],
     platforms=["any"],
     license="License :: OSI Approved :: BSD 3-clause License",

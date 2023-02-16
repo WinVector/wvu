@@ -11,7 +11,6 @@ def test_graphs(monkeypatch):
     # https://stackoverflow.com/a/60127271/6901725
     monkeypatch.setattr(matplotlib.pyplot, 'show', lambda: None)
 
-    # %%
     d = pandas.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [False, False, True, True, False]
@@ -27,8 +26,6 @@ def test_graphs(monkeypatch):
         })
     )
 
-    # %%
-
     d = pandas.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [False, False, True, True, False]
@@ -39,8 +36,6 @@ def test_graphs(monkeypatch):
         istrue=d['y'],
     )
 
-    # %%
-
     d = pandas.DataFrame({
         'x': [.1, .2, .3, .4, .5],
         'y': [False, False, True, True, False]
@@ -50,8 +45,6 @@ def test_graphs(monkeypatch):
         probs=d['x'],
         istrue=d['y'],
     )
-
-    # %%
 
     d = pandas.DataFrame({
         'x': [.1, .2, .3, .4, .5],
@@ -89,8 +82,6 @@ def test_graphs(monkeypatch):
         plotvars=("sensitivity", "specificity"),
     )
 
-    # %%
-
     d = pandas.DataFrame({
         'x': [1, 2, 3, 4, 5],
         'y': [False, False, True, True, False]
@@ -116,8 +107,6 @@ def test_graphs(monkeypatch):
         probs=pmat,
         istrue=d['y'],
     )
-
-    # %%
 
     d = pandas.DataFrame({
         'x': [.1, .2, .3, .4, .5],
