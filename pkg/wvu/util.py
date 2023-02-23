@@ -330,8 +330,9 @@ def dual_density_plot(
     preds_on_negative = [
         probs[i] for i in range(len(probs)) if not istrue[i] == truth_target
     ]
-    seaborn.kdeplot(preds_on_positive, label=positive_label, fill=True)
+    plobj = seaborn.kdeplot(preds_on_positive, label=positive_label, fill=True)
     seaborn.kdeplot(preds_on_negative, label=negative_label, fill=True)
+    plobj.set_xlim(numpy.min(probs), numpy.max(probs))
     matplotlib.pyplot.ylabel(ylabel)
     matplotlib.pyplot.xlabel(xlabel)
     matplotlib.pyplot.title(title)
@@ -406,6 +407,10 @@ def dual_density_plot_proba1(
 
     Example:
 
+    import pandas
+    import numpy
+    import wvu.util
+
     d = pandas.DataFrame({
         'x': [.1, .2, .3, .4, .5],
         'y': [False, False, True, True, False]
@@ -427,8 +432,9 @@ def dual_density_plot_proba1(
     preds_on_negative = [
         probs[i, 1] for i in range(len(probs)) if not istrue[i] == truth_target
     ]
-    seaborn.kdeplot(preds_on_positive, label=positive_label, fill=True)
+    plobj = seaborn.kdeplot(preds_on_positive, label=positive_label, fill=True)
     seaborn.kdeplot(preds_on_negative, label=negative_label, fill=True)
+    plobj.set_xlim(numpy.min(preds_on_positive + preds_on_negative), numpy.max(preds_on_positive + preds_on_negative))
     matplotlib.pyplot.ylabel(ylabel)
     matplotlib.pyplot.xlabel(xlabel)
     matplotlib.pyplot.title(title)
